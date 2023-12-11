@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == Print_Words && resultCode == RESULT_OK) {
             ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+            assert result != null;
             EnteredText.setText(result.toString());
         }
         super.onActivityResult(requestCode, resultCode, data);
